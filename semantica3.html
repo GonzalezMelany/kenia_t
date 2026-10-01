@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Estructura con Columnas - Los Vees</title>
+    <style>
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita barras de desplazamiento */
+            background-color: #08030f; /* Fondo oscuro púrpura nocturno */
+            color: #f7e6ff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #120621; /* Púrpura oscuro elegante */
+            padding: 8px 20px;
+            height: 16vh;
+            box-sizing: border-box;
+            border-bottom: 2px solid #ff007f; /* Borde rosa neón */
+        }
+
+        .logo-pequeno {
+            width: 200px;
+            height: auto;
+            display: block;
+        }
+
+        .logo-cabecera {
+            height: 120%;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .barra-navegacion {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        /* Estilos de botones acordes a la paleta de los Vees (Cian y Fucsia) */
+        .boton-nav {
+            text-decoration: none;
+            color: #f7e6ff;
+            background-color: #2b0d3a; /* Púrpura medio */
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: sans-serif;
+            font-weight: bold;
+            border: 1px solid #7b00ff;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .boton-nav:hover {
+            background-color: #00e5ff; /* Cian neón de Vox */
+            color: #08030f;            /* Texto oscuro para contraste */
+            border-color: #00e5ff;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+        }
+
+        .boton-nav.activo {
+            background-color: #ff007f; /* Magenta / Fucsia brillante de Velvette */
+            color: #ffffff;
+            font-weight: bold;
+            border-color: #ff66b2;
+            box-shadow: 0 0 12px rgba(255, 0, 127, 0.8);
+        }
+
+        main {
+            display: flex;
+            gap: 0;
+            flex: 1;
+            height: 84vh;
+        }
+
+        aside {
+            width: 25%;
+            background-color: #10061c; /* Fondo lateral púrpura profundo */
+            padding: 15px;
+            color: #f7e6ff;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #3d0066;
+        }
+
+        aside h3 {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #00e5ff; /* Detalle cian neón */
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+        }
+
+        aside p {
+            margin: 5px 0 10px 0;
+            font-size: 0.85rem;
+            color: #d8b3ff;
+        }
+
+        .imagen-lateral {
+            max-width: 80%;
+            max-height: 50vh;
+            height: auto;
+            border-radius: 5px;
+            object-fit: contain;
+            border: 1px solid #ff007f;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+        }
+
+        section {
+            width: 75%;
+            background-color: #190a2e; /* Fondo central púrpura medio */
+            padding: 15px;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Tarjeta contenedora con gradiente magenta a azul/púrpura */
+        article {
+            background: linear-gradient(145deg, #2a0538, #0e021a); /* Degradado extravagante de Los Vees */
+            color: #f7e6ff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 650px;
+            max-height: 75vh;
+            box-shadow: 0 0 22px rgba(255, 0, 127, 0.4); /* Resplandor fucsia neón */
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ff007f; /* Borde fucsia vibrante */
+        }
+
+        article h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: #00e5ff; /* Cian neón para resaltar el título */
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+        }
+
+        article p {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            color: #f7e6ff;
+        }
+
+        .imagen-articulo {
+            max-width: 35%;
+            max-height: 28vh;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            object-fit: contain;
+            border: 1px solid #00e5ff; /* Borde cian de Vox */
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 style="margin: 0; color: #ff007f; font-size: 1.5rem; text-shadow: 0 0 8px rgba(255,0,127,0.5);">Mi Sitio Web</h1>
+            <nav class="barra-navegacion">
+                <a href="index.html" class="boton-nav">ALASTOR</a>
+                <a href="semantica2.html" class="boton-nav">VOX</a>
+                <a href="semantica3.html" class="boton-nav activo">VEES</a>
+            </nav>
+        </div>
+        <img src="imagen/veesll.jpg" alt="Logo de Mi Sitio Web" class="logo-cabecera">
+    </header>
+    <main>
+        <aside>
+            <h3>¡EL IMPERIO DE LOS VEES!</h3>
+            <p>Moda, tecnología y el mejor entretenimiento. Nosotros no seguimos tendencias, las creamos. El Infierno nos pertenece.</p>
+            <img src="imagen/torrev.jpg" alt="Torre Vee" class="imagen-lateral">
+        </aside>
+        <section>
+            <article>
+                <h2>Los Vees: El Trío del Poder</h2>
+                <p>Los Vees son la alianza de Overlords más influyente y moderna del Infierno, integrada por Vox (tecnología), Velvette (moda) y Valentino (entretenimiento). Juntos forman un imperio mediático imparable que domina la cultura pop, las tendencias y el entretenimiento masivo de Pentagram City, demostrando que el verdadero control pertenece a la era moderna.</p>
+                <img src="imagen/vees.gif" alt="Los Vees" class="imagen-articulo">
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
